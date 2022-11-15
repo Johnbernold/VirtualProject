@@ -28,7 +28,7 @@ import {
 const FilterPage = props => {
   const {
     searchValueData,
-
+    onClickClearButton,
     submitValue,
     ChangeCardholder,
     changeSearchInput,
@@ -36,6 +36,7 @@ const FilterPage = props => {
     ChangeSubscription,
     ChangeBurner,
     searchShowValue,
+    optionsStateData,
   } = props
 
   const onChangeSearch = event => {
@@ -60,6 +61,10 @@ const FilterPage = props => {
 
   const onSubmitButton = () => {
     submitValue()
+  }
+
+  const clearButton = () => {
+    onClickClearButton()
   }
 
   return (
@@ -108,7 +113,7 @@ const FilterPage = props => {
               </SeperateCheckbox>
             </CheckBoxSection>
             <TypeText>Cardholder</TypeText>
-            <SelectText onChange={onChangeCardholder} value="Select Cardholder">
+            <SelectText onChange={onChangeCardholder} value={optionsStateData}>
               <OptionText value="Credit Card Account">Credit Card</OptionText>
               <OptionText value="Money Market Account">
                 Money Market Card
@@ -128,7 +133,9 @@ const FilterPage = props => {
               <ApplyButton onClick={onSubmitButton} type="button">
                 Apply
               </ApplyButton>
-              <ClearButton type="button">ClearButton</ClearButton>
+              <ClearButton onClick={clearButton} type="button">
+                ClearButton
+              </ClearButton>
             </FilterApplySection>
           </FilterOptionSection>
         </Popup>

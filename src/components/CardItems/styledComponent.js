@@ -5,7 +5,7 @@ export const LiCard = styled.li`
   box-shadow: 0px 4px 10px 0px #bfbfbf;
   padding: 10px;
   border-radius: 8px;
-  height: 38vh;
+  height: 45vh;
   margin: 10px;
   list-style-type: none;
 `
@@ -60,6 +60,7 @@ export const TextValue = styled.p`
   font-size: 10px;
   font-weight: 500;
   font-family: 'Roboto';
+  margin-right: 5px;
 `
 export const PercentageSection = styled.div`
   display: flex;

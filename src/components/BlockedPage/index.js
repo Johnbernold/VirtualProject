@@ -8,7 +8,7 @@ import CardItems from '../CardItems'
 
 class BlockedPage extends Component {
   state = {
-    optionsState: '',
+    optionsState: 'Select Cardholder',
     searchShow: false,
     searchValue: '',
     checkBoxSub: '',
@@ -93,6 +93,14 @@ class BlockedPage extends Component {
       finalSub: checkBoxSub,
       finalBur: checkBoxBur,
       dropDowm: optionsState,
+    })
+  }
+
+  onClickClearButton = () => {
+    this.setState({
+      finalSub: '',
+      finalBur: '',
+      dropDowm: '',
     })
   }
 
@@ -197,6 +205,7 @@ class BlockedPage extends Component {
           ChangeBurner={this.ChangeBurner}
           ChangeSearch={this.ChangeSearch}
           ChangeSubscription={this.ChangeSubscription}
+          onClickClearButton={this.onClickClearButton}
         />
 
         <InfiniteScroll
